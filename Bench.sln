@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IRSensor", "IRSensor\IRSensor.vcxproj", "{C5F80730-F44F-4478-BDAE-6634EFC2CA88}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TCRT5000", "C:\Users\Dmytro.Mykhalchuk\Documents\Arduino\TCRT5000\TCRT5000.vcxproj", "{95865A05-6016-413E-80A6-4410B752BFFD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Debug|x86.ActiveCfg = Debug|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Debug|x86.Build.0 = Debug|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|x86.ActiveCfg = Release|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|x86.Build.0 = Release|Win32
+		{95865A05-6016-413E-80A6-4410B752BFFD}.Debug|x86.ActiveCfg = Debug|Win32
+		{95865A05-6016-413E-80A6-4410B752BFFD}.Debug|x86.Build.0 = Debug|Win32
+		{95865A05-6016-413E-80A6-4410B752BFFD}.Release|x86.ActiveCfg = Release|Win32
+		{95865A05-6016-413E-80A6-4410B752BFFD}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C4BD9C83-C31E-4D45-93B7-8E7D8BD5ACDF}
+	EndGlobalSection
+EndGlobal
