@@ -36,4 +36,6 @@ void loop()
 	uint8_t val = analogRead(sensorPin);     // read the input pin
 	Serial.println(val);
 	delay(500);
+	
+	//Greetings from another thread!
 }
