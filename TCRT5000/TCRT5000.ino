@@ -18,7 +18,8 @@
 //
 #include <inttypes.h>
 
-uint8_t sensorPin = 14;
+uint8_t sensorPinA0 = 14;
+uint8_t sensorPinA1 = 15;
 
 // The setup() function runs once each time the micro-controller starts
 void setup()
@@ -28,14 +29,20 @@ void setup()
 
 	Serial.println("Hello uint32! Approach3777");  // prints hello with ending line break
 	delay(5000);
+
 }
 
 // Add the main program code into the continuous loop() function
 void loop()
 {
-	uint8_t val = analogRead(sensorPin);     // read the input pin
+	uint8_t val = analogRead(sensorPinA0);     // read the input pin
 	Serial.println(val);
+
+	val = analogRead(sensorPinA1);     // read the input pin
+	Serial.println(val);
+
 	delay(500);
+
 	
 	//Greetings from another thread!
 }

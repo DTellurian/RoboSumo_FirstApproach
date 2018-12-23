@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IRSensor", "IRSensor\IRSensor.vcxproj", "{C5F80730-F44F-4478-BDAE-6634EFC2CA88}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TCRT5000", "TCRT5000\TCRT5000.vcxproj", "{95865A05-6016-413E-80A6-4410B752BFFD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SumoRobot", "SumoRobot\SumoRobot.vcxproj", "{54D7443C-92BF-4FF4-8914-8F4D41C3C100}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +22,10 @@ Global
 		{95865A05-6016-413E-80A6-4410B752BFFD}.Debug|x86.Build.0 = Debug|Win32
 		{95865A05-6016-413E-80A6-4410B752BFFD}.Release|x86.ActiveCfg = Release|Win32
 		{95865A05-6016-413E-80A6-4410B752BFFD}.Release|x86.Build.0 = Release|Win32
+		{54D7443C-92BF-4FF4-8914-8F4D41C3C100}.Debug|x86.ActiveCfg = Debug|Win32
+		{54D7443C-92BF-4FF4-8914-8F4D41C3C100}.Debug|x86.Build.0 = Debug|Win32
+		{54D7443C-92BF-4FF4-8914-8F4D41C3C100}.Release|x86.ActiveCfg = Release|Win32
+		{54D7443C-92BF-4FF4-8914-8F4D41C3C100}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

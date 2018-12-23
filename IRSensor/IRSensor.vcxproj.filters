@@ -27,15 +27,9 @@
     <ClInclude Include="TestClass\testClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="EnginesDriver.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LedDriver.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="EnginesDriver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
