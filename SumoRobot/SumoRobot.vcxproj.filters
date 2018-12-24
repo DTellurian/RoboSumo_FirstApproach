@@ -24,9 +24,15 @@
     <ClInclude Include="EngineDriver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="SensorTCRT5000.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EngineDriver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SensorTCRT5000.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -4,6 +4,7 @@
  Author:	Dmytro.Mykhalchuk
 */
 
+#include "SensorTCRT5000.h"
 #include "EngineDriver.h"
 
 // the setup function runs once when you press reset or power the board
@@ -22,7 +23,7 @@ void loop()
 {
 	Serial.println("Launch");
 
-	uint8_t velocityArray[6] = {40, 30, 40, 140, 190, VELOCITY_MAX_SPEDD };
+	uint8_t velocityArray[6] = { 40, 30, 40, 140, 190, VELOCITY_MAX_SPEED };
 	uint8_t arrayLength = 6;
 	uint8_t index = 0;
 
@@ -32,7 +33,23 @@ void loop()
 	EngineDriver leftEngine(12, 11, 10);
 	EngineDriver rightEngine(7, 8, 9);
 
+	SensorTCRT5000 leftSensorTCRT5000(15, 400);
+	SensorTCRT5000 rightSensorTCRT5000(14, 400);
+
 	while (true)
+	{
+		int sensorValue = leftSensorTCRT5000.Measure();
+		Serial.print("L:");
+		Serial.println(sensorValue);
+
+		sensorValue = rightSensorTCRT5000.Measure();
+		Serial.print("R:");
+		Serial.println(sensorValue);
+
+		Serial.println();
+
+		delay(1000);
+	}
 	{
 		if (++index == arrayLength)
 		{

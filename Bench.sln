@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TCRT5000", "TCRT5000\TCRT50
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SumoRobot", "SumoRobot\SumoRobot.vcxproj", "{54D7443C-92BF-4FF4-8914-8F4D41C3C100}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7059C1C7-D1F9-41E3-94E3-C86CA8063177}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -29,6 +31,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88} = {7059C1C7-D1F9-41E3-94E3-C86CA8063177}
+		{95865A05-6016-413E-80A6-4410B752BFFD} = {7059C1C7-D1F9-41E3-94E3-C86CA8063177}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C4BD9C83-C31E-4D45-93B7-8E7D8BD5ACDF}

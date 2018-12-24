@@ -12,7 +12,7 @@
 #define DIRECTION_FORWARD 0x1
 #define DIRECTION_BACK  0x0
 
-#define VELOCITY_MAX_SPEDD  0xFF
+#define VELOCITY_MAX_SPEED  0xFF
 
 class EngineDriver
 {
