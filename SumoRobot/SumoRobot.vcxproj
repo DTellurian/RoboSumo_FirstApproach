@@ -112,12 +112,16 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AtomicMotion.h" />
     <ClInclude Include="EngineDriver.h" />
+    <ClInclude Include="MovementManager.h" />
     <ClInclude Include="SensorTCRT5000.h" />
     <ClInclude Include="__vm\.SumoRobot.vsarduino.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AtomicMotion.cpp" />
     <ClCompile Include="EngineDriver.cpp" />
+    <ClCompile Include="MovementManager.cpp" />
     <ClCompile Include="SensorTCRT5000.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

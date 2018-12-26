@@ -27,12 +27,24 @@
     <ClInclude Include="..\SumoRobot\SensorTCRT5000.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\SumoRobot\MovementManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SumoRobot\AtomicMotion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\SumoRobot\EngineDriver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\SumoRobot\SensorTCRT5000.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SumoRobot\MovementManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SumoRobot\AtomicMotion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

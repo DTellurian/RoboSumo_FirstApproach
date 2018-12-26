@@ -4,6 +4,8 @@
  Author:	Dmytro.Mykhalchuk
 */
 
+#include "AtomicMotion.h"
+#include "MovementManager.h"
 #include "SensorTCRT5000.h"
 #include "EngineDriver.h"
 

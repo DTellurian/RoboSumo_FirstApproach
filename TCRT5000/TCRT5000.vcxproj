@@ -103,12 +103,16 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\SumoRobot\AtomicMotion.h" />
     <ClInclude Include="..\SumoRobot\EngineDriver.h" />
+    <ClInclude Include="..\SumoRobot\MovementManager.h" />
     <ClInclude Include="..\SumoRobot\SensorTCRT5000.h" />
     <ClInclude Include="__vm\.TCRT5000.vsarduino.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\SumoRobot\AtomicMotion.cpp" />
     <ClCompile Include="..\SumoRobot\EngineDriver.cpp" />
+    <ClCompile Include="..\SumoRobot\MovementManager.cpp" />
     <ClCompile Include="..\SumoRobot\SensorTCRT5000.cpp" />
   </ItemGroup>
   <PropertyGroup>
