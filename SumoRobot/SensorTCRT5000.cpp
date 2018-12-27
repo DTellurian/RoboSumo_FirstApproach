@@ -21,7 +21,8 @@ int SensorTCRT5000::Measure()
 	}
 	else
 	{
-		_occasionsCount = 0;		
+		_occasionsCount = 0;
+		_isReset = 0;
 	}
 
 	return currentValue;
@@ -29,7 +30,12 @@ int SensorTCRT5000::Measure()
 
 uint8_t SensorTCRT5000::IsSignaled()
 {
-	return _occasionsCount >= MIN_OCCASION_COUNT;
+	return _occasionsCount >= MIN_OCCASION_COUNT && _isReset == 0;
+}
+
+void SensorTCRT5000::Reset()
+{
+	_isReset = 1;
 }
 
 

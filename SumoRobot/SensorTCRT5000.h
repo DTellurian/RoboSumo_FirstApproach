@@ -16,6 +16,7 @@ class SensorTCRT5000
 private:
 	SensorTCRT5000();
 
+	uint8_t _isReset = 0;
 	uint8_t _sensorPin = 0;
 	uint8_t _occasionsCount = 0;
 	int _lowLimit = 0;
@@ -27,6 +28,7 @@ public:
 
 	int Measure();
 	uint8_t IsSignaled();
+	void Reset();
 };
 
 //extern SensorTCRT5000Class SensorTCRT5000;
