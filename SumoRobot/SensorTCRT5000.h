@@ -11,7 +11,9 @@
 
 #define MIN_OCCASION_COUNT 1
 
-class SensorTCRT5000
+#include "TwoStateSensor.h"
+
+class SensorTCRT5000 : public TwoStateSensor
 {
 private:
 	SensorTCRT5000();
@@ -26,8 +28,9 @@ protected:
 public:
 	SensorTCRT5000(uint8_t sensorPin, int lowLimit);
 
+	virtual void OnTick();
 	int Measure();
-	uint8_t IsSignaled();
+	virtual uint8_t IsSignaled();
 	void Reset();
 };
 

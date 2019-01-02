@@ -4,6 +4,9 @@
  Author:	Dmytro.Mykhalchuk
 */
 
+#include "SensorStatesController.h"
+#include "TwoStateSensor.h"
+#include "TwoStateSensor.h"
 #include "SensorTCRT5000.h"
 #include "EngineDriver.h"
 #include "MovementManager.h"

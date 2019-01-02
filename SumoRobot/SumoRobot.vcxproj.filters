@@ -33,6 +33,12 @@
     <ClInclude Include="AtomicMotion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TwoStateSensor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SensorStatesController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EngineDriver.cpp">
@@ -45,6 +51,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="AtomicMotion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TwoStateSensor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SensorStatesController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

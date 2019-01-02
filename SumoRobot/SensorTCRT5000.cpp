@@ -10,6 +10,10 @@ SensorTCRT5000::SensorTCRT5000(uint8_t sensorPin, int lowLimit)
 	_lowLimit = lowLimit;
 }
 
+void SensorTCRT5000::OnTick()
+{
+}
+
 int SensorTCRT5000::Measure()
 {
 	int currentValue = analogRead(_sensorPin);
