@@ -15,6 +15,7 @@
 #define VELOCITY_MAX_SPEED  0xFF
 #define VELOCITY_MAX_SPEED  0xFF
 #define VELOCITY_CRUISER_SPEED  0xDC
+//#define VELOCITY_CRUISER_SPEED  140
 
 class EngineDriver
 {

@@ -56,8 +56,8 @@ void DelayForSeconds(uint8_t secondsCount)
 {
 	while (secondsCount-- > 0)
 	{
-		//Serial.print(secondsCount + 1);
-		//Serial.println(" left");
+		Serial.print(secondsCount + 1);
+		Serial.println(" left");
 
 		delay(1000);
 	}
@@ -67,60 +67,9 @@ void DelayForSeconds(uint8_t secondsCount)
 void loop()
 {
 	delay(700);
-	//DelayForSeconds(5);	
+	DelayForSeconds(3);
 
-	digitalWrite(LED_BUILTIN, HIGH);
-	delay(200);
-	digitalWrite(LED_BUILTIN, LOW);
-	delay(200);
-	digitalWrite(LED_BUILTIN, HIGH);
-	delay(200);
-	digitalWrite(LED_BUILTIN, LOW);
-	delay(200);
-	digitalWrite(LED_BUILTIN, HIGH);
-	delay(200);
-	digitalWrite(LED_BUILTIN, HIGH);
-	delay(200);
-	digitalWrite(LED_BUILTIN, LOW);
-	delay(200);
-	digitalWrite(LED_BUILTIN, HIGH);
-	delay(200);
-	digitalWrite(LED_BUILTIN, LOW);
-	delay(200);
-	digitalWrite(LED_BUILTIN, HIGH);
-	delay(200);
-	digitalWrite(LED_BUILTIN, HIGH);
-	delay(200);
-	digitalWrite(LED_BUILTIN, LOW);
-	delay(200);
-	digitalWrite(LED_BUILTIN, HIGH);
-	delay(200);
-	digitalWrite(LED_BUILTIN, LOW);
-	delay(200);
-	digitalWrite(LED_BUILTIN, HIGH);
-	delay(200);
-	digitalWrite(LED_BUILTIN, HIGH);
-	delay(200);
-	digitalWrite(LED_BUILTIN, LOW);
-	delay(200);
-	digitalWrite(LED_BUILTIN, HIGH);
-	delay(200);
-	digitalWrite(LED_BUILTIN, LOW);
-	delay(200);
-	digitalWrite(LED_BUILTIN, HIGH);
-	delay(200);
-	digitalWrite(LED_BUILTIN, HIGH);
-	delay(200);
-	digitalWrite(LED_BUILTIN, LOW);
-	delay(200);
-	digitalWrite(LED_BUILTIN, HIGH);
-	delay(200);
-	digitalWrite(LED_BUILTIN, LOW);
-	delay(200);
-	digitalWrite(LED_BUILTIN, HIGH);
-	delay(200);
-
-	//Serial.println("Launch SumoRobot");
+	Serial.println("Launch SumoRobot");
 
 	EngineDriver leftEngine(12, 11, 10);
 	EngineDriver rightEngine(7, 8, 9);
@@ -128,35 +77,35 @@ void loop()
 	SensorTCRT5000 leftSensorTCRT5000(15, 400);
 	SensorTCRT5000 rightSensorTCRT5000(14, 400);
 
-	//MovementManager movementManager(&leftEngine, &rightEngine);
+	MovementManager movementManager(&leftEngine, &rightEngine);
 
 	//while (true)
-	//{
-	//	uint8_t leftSensorValueIR = digitalRead(leftSensorPin);
-	//	uint8_t rightSensorValueIR = digitalRead(rightSensorPin);
+	{
+		//uint8_t leftSensorValueIR = digitalRead(leftSensorPin);
+		//uint8_t rightSensorValueIR = digitalRead(rightSensorPin);
 
-	//	//0 - somebody here
-	//	//1 - nothing
+		//0 - somebody here
+		//1 - nothing
 
-	//	Serial.print("Left:");
-	//	Serial.println(leftSensorValueIR);
-	//	Serial.print("Right:");
-	//	Serial.println(rightSensorValueIR);
+		//Serial.print("Left:");
+		//`Serial.println(leftSensorValueIR);
+		//	Serial.print("Right:");
+		//	Serial.println(rightSensorValueIR);
 
-	//	Serial.println();
-	//	delay(1000);
+		//	Serial.println();
+		//	delay(1000);
 
-	//	continue;
-	//}
+		//	continue;
+	}
 
-	
+
 
 	while (true)
 	{
 		int leftSensorValue = leftSensorTCRT5000.Measure();
 		int rifghtSensorValue = rightSensorTCRT5000.Measure();
 
-		//movementManager.OnTick();
+		movementManager.OnTick();
 
 		/*if (movementManager.AnyMovementExecuted() == 0)
 		{
@@ -166,26 +115,27 @@ void loop()
 				100000);
 		}*/
 
-		leftEngine.SetMode(DIRECTION_FORWARD, VELOCITY_CRUISER_SPEED);
-		rightEngine.SetMode(DIRECTION_FORWARD, VELOCITY_CRUISER_SPEED);
+		//leftEngine.SetMode(DIRECTION_FORWARD, VELOCITY_CRUISER_SPEED);
+		//rightEngine.SetMode(DIRECTION_FORWARD, VELOCITY_CRUISER_SPEED);
 
 		if (leftSensorTCRT5000.IsSignaled() || rightSensorTCRT5000.IsSignaled())
 		{
+
 			leftSensorTCRT5000.Reset();
 			rightSensorTCRT5000.Reset();
 
-			//Serial.print("L:");
-			//Serial.println(leftSensorValue);
+			Serial.print("L:");
+			Serial.println(leftSensorValue);
 
-			//Serial.print("R:");
-			//Serial.println(rifghtSensorValue);
+			Serial.print("R:");
+			Serial.println(rifghtSensorValue);
 
-			//movementManager.ClearQueue();
+			movementManager.ClearQueue();
 
-			//Serial.println("Sensors!");
-			//DelayForSeconds(5);
+			Serial.println("Sensors!");
+			DelayForSeconds(5);
 
-			leftEngine.SetMode(DIRECTION_BACK, VELOCITY_CRUISER_SPEED);
+		/*	leftEngine.SetMode(DIRECTION_BACK, VELOCITY_CRUISER_SPEED);
 			rightEngine.SetMode(DIRECTION_BACK, VELOCITY_CRUISER_SPEED);
 
 			delay(100);
@@ -193,20 +143,20 @@ void loop()
 			leftEngine.SetMode(DIRECTION_BACK, VELOCITY_CRUISER_SPEED);
 			rightEngine.SetMode(DIRECTION_FORWARD, VELOCITY_CRUISER_SPEED);
 
-			delay(400);
+			delay(400);*/
 
-			//movementManager.SetNextAction(
-			//	DIRECTION_BACK, VELOCITY_CRUISER_SPEED,
-			//	DIRECTION_BACK, VELOCITY_CRUISER_SPEED,
-			//	100);
+			movementManager.SetNextAction(
+				DIRECTION_BACK, VELOCITY_CRUISER_SPEED,
+				DIRECTION_BACK, VELOCITY_CRUISER_SPEED,
+				100);
 
-			//movementManager.SetNextAction(
-			//	DIRECTION_FORWARD, VELOCITY_CRUISER_SPEED,
-			//	DIRECTION_BACK, VELOCITY_CRUISER_SPEED,
-			//	300);
+			movementManager.SetNextAction(
+				DIRECTION_FORWARD, VELOCITY_CRUISER_SPEED,
+				DIRECTION_BACK, VELOCITY_CRUISER_SPEED,
+				400);
 		}
-		
-		if(0)
+
+		if (0)
 		{
 			//0 - somebody here
 			//1 - nothing
