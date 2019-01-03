@@ -21,6 +21,7 @@ class EngineDriver
 {
 private:
 	EngineDriver();
+	EngineDriver(EngineDriver&);
 
 protected:
 	uint8_t _enanble1Pin;

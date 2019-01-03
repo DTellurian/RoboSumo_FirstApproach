@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.136
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IRSensor", "IRSensor\IRSensor.vcxproj", "{C5F80730-F44F-4478-BDAE-6634EFC2CA88}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SumoRobot", "SumoRobot\SumoRobot.vcxproj", "{54D7443C-92BF-4FF4-8914-8F4D41C3C100}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7059C1C7-D1F9-41E3-94E3-C86CA8063177}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SensorStatesControllerTest", "SensorStatesControllerTest\SensorStatesControllerTest.vcxproj", "{A3A6BE05-2DB3-4EF5-97EE-53D0C022F07B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,6 +30,10 @@ Global
 		{54D7443C-92BF-4FF4-8914-8F4D41C3C100}.Debug|x86.Build.0 = Debug|Win32
 		{54D7443C-92BF-4FF4-8914-8F4D41C3C100}.Release|x86.ActiveCfg = Release|Win32
 		{54D7443C-92BF-4FF4-8914-8F4D41C3C100}.Release|x86.Build.0 = Release|Win32
+		{A3A6BE05-2DB3-4EF5-97EE-53D0C022F07B}.Debug|x86.ActiveCfg = Debug|Win32
+		{A3A6BE05-2DB3-4EF5-97EE-53D0C022F07B}.Debug|x86.Build.0 = Debug|Win32
+		{A3A6BE05-2DB3-4EF5-97EE-53D0C022F07B}.Release|x86.ActiveCfg = Release|Win32
+		{A3A6BE05-2DB3-4EF5-97EE-53D0C022F07B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -35,6 +41,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{C5F80730-F44F-4478-BDAE-6634EFC2CA88} = {7059C1C7-D1F9-41E3-94E3-C86CA8063177}
 		{95865A05-6016-413E-80A6-4410B752BFFD} = {7059C1C7-D1F9-41E3-94E3-C86CA8063177}
+		{A3A6BE05-2DB3-4EF5-97EE-53D0C022F07B} = {7059C1C7-D1F9-41E3-94E3-C86CA8063177}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C4BD9C83-C31E-4D45-93B7-8E7D8BD5ACDF}

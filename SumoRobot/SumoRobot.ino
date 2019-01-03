@@ -4,12 +4,15 @@
  Author:	Dmytro.Mykhalchuk
 */
 
+#include "OnboardHardware.h"
 #include "SensorStatesController.h"
 #include "TwoStateSensor.h"
 #include "TwoStateSensor.h"
 #include "SensorTCRT5000.h"
 #include "EngineDriver.h"
 #include "MovementManager.h"
+
+#include "OnboardHardware.h"
 
 uint8_t leftSensorPin = 3;
 uint8_t rightSensorPin = 4;
@@ -24,7 +27,7 @@ void setup()
 	pinMode(leftSensorPin, INPUT);
 	pinMode(rightSensorPin, INPUT);
 
-	//Serial.begin(9600);
+	Serial.begin(9600);
 
 	/*digitalWrite(LED_BUILTIN, HIGH);
 	delay(200);
@@ -74,13 +77,13 @@ void loop()
 
 	Serial.println("Launch SumoRobot");
 
-	EngineDriver leftEngine(12, 11, 10);
-	EngineDriver rightEngine(7, 8, 9);
+	//EngineDriver leftEngine(12, 11, 10);
+	//EngineDriver rightEngine(7, 8, 9);
 
-	SensorTCRT5000 leftSensorTCRT5000(15, 400);
-	SensorTCRT5000 rightSensorTCRT5000(14, 400);
+	//SensorTCRT5000 leftSensorTCRT5000(15, 400);
+	//SensorTCRT5000 rightSensorTCRT5000(14, 400);
 
-	MovementManager movementManager(&leftEngine, &rightEngine);
+	//MovementManager movementManager(&OnboardHardware::leftEngine, &OnboardHardware::rightEngine);
 
 	//while (true)
 	{
@@ -105,10 +108,10 @@ void loop()
 
 	while (true)
 	{
-		int leftSensorValue = leftSensorTCRT5000.Measure();
-		int rifghtSensorValue = rightSensorTCRT5000.Measure();
+		int leftSensorValue = OnboardHardware::leftSensorTCRT5000.Measure();
+		int rifghtSensorValue = OnboardHardware::rightSensorTCRT5000.Measure();
 
-		movementManager.OnTick();
+		OnboardHardware::movementManager.OnTick();
 
 		/*if (movementManager.AnyMovementExecuted() == 0)
 		{
@@ -121,11 +124,11 @@ void loop()
 		//leftEngine.SetMode(DIRECTION_FORWARD, VELOCITY_CRUISER_SPEED);
 		//rightEngine.SetMode(DIRECTION_FORWARD, VELOCITY_CRUISER_SPEED);
 
-		if (leftSensorTCRT5000.IsSignaled() || rightSensorTCRT5000.IsSignaled())
+		if (OnboardHardware::leftSensorTCRT5000.IsSignaled() || OnboardHardware::rightSensorTCRT5000.IsSignaled())
 		{
 
-			leftSensorTCRT5000.Reset();
-			rightSensorTCRT5000.Reset();
+			OnboardHardware::leftSensorTCRT5000.Reset();
+			OnboardHardware::rightSensorTCRT5000.Reset();
 
 			Serial.print("L:");
 			Serial.println(leftSensorValue);
@@ -133,7 +136,7 @@ void loop()
 			Serial.print("R:");
 			Serial.println(rifghtSensorValue);
 
-			movementManager.ClearQueue();
+			OnboardHardware::movementManager.ClearQueue();
 
 			Serial.println("Sensors!");
 			DelayForSeconds(5);
@@ -148,12 +151,12 @@ void loop()
 
 			delay(400);*/
 
-			movementManager.SetNextAction(
+			OnboardHardware::movementManager.SetNextAction(
 				DIRECTION_BACK, VELOCITY_CRUISER_SPEED,
 				DIRECTION_BACK, VELOCITY_CRUISER_SPEED,
 				100);
 
-			movementManager.SetNextAction(
+			OnboardHardware::movementManager.SetNextAction(
 				DIRECTION_FORWARD, VELOCITY_CRUISER_SPEED,
 				DIRECTION_BACK, VELOCITY_CRUISER_SPEED,
 				400);
