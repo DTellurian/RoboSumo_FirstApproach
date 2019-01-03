@@ -41,13 +41,29 @@ void loop()
 			
 			if (OnboardHardware::sensorStatesController.IsChanged(&OnboardHardware::leftSensorTCRT5000, newSensorState) == 1)
 			{
+				Serial.print(millis());
 				Serial.print("Left sensor change state. New state");
 				Serial.println(newSensorState);
 			}
 
 			if (OnboardHardware::sensorStatesController.IsChanged(&OnboardHardware::rightSensorTCRT5000, newSensorState) == 1)
 			{
+				Serial.print(millis());
 				Serial.print("Right sensor change state. New state");
+				Serial.println(newSensorState);
+			}
+
+			if (OnboardHardware::sensorStatesController.IsChanged(&OnboardHardware::leftIRForwardSensor, newSensorState) == 1)
+			{
+				Serial.print(millis());
+				Serial.print("Left IR sensor change state. New state");
+				Serial.println(newSensorState);
+			}
+
+			if (OnboardHardware::sensorStatesController.IsChanged(&OnboardHardware::rightIRForwardSensor, newSensorState) == 1)
+			{
+				Serial.print(millis());
+				Serial.print("Right IR sensor change state. New state");
 				Serial.println(newSensorState);
 			}
 			

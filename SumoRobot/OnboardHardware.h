@@ -13,6 +13,7 @@
 #include "SensorTCRT5000.h"
 #include "MovementManager.h"
 #include "SensorStatesController.h"
+#include "DigitalInputSensor.h"
 
 class OnboardHardware
 {
@@ -25,6 +26,9 @@ public:
 
 	static SensorTCRT5000 leftSensorTCRT5000;
 	static SensorTCRT5000 rightSensorTCRT5000;
+
+	static DigitalInputSensor leftIRForwardSensor;
+	static DigitalInputSensor rightIRForwardSensor;
 
 	static MovementManager movementManager;
 	static SensorStatesController sensorStatesController;

@@ -13,6 +13,8 @@ SensorStatesController::SensorStatesController()
 {
 	sensorsPtrArray[0] = &OnboardHardware::leftSensorTCRT5000;
 	sensorsPtrArray[1] = &OnboardHardware::rightSensorTCRT5000;
+	sensorsPtrArray[2] = &OnboardHardware::leftIRForwardSensor;
+	sensorsPtrArray[3] = &OnboardHardware::rightIRForwardSensor;
 }
 //---------------------------------------------------------------------------
 
@@ -37,12 +39,13 @@ uint8_t SensorStatesController::IsChanged(TwoStateSensor* sensotToCheckPtr, uint
 	{
 		if (sensorsPtrArray[i] == sensotToCheckPtr)
 		{
-			if (handeledSensorsStates[i] != sensorsPtrArray[i]->IsSignaled())
-			{
-				newValue = sensorsPtrArray[i]->IsSignaled();
+			newValue = sensorsPtrArray[i]->IsSignaled();
+
+			if (handeledSensorsStates[i] != newValue)
+			{				
 				return 1;
 			}
-			else
+			else			
 				return 0;
 		}
 	}

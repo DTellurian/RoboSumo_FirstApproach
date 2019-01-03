@@ -10,7 +10,7 @@
 #endif
 //---------------------------------------------------------------------------
 
-#define SENSORS_COUNT 2
+#define SENSORS_COUNT 4
 //---------------------------------------------------------------------------
 
 #include "TwoStateSensor.h"
@@ -22,9 +22,7 @@ protected:
 	TwoStateSensor* sensorsPtrArray[SENSORS_COUNT] = {};
 	uint8_t handeledSensorsStates[SENSORS_COUNT] = {};	
 	uint8_t hasChangedSensorValues = 0;	
-
 	
-
 public:
 	SensorStatesController();
 

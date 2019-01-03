@@ -4,8 +4,8 @@
  Author:	Dmytro.Mykhalchuk
 */
 
+
 #include "DebugHelper.h"
-#include "SensorStatesController.h"
 #include "OnboardHardware.h"
 
 uint8_t leftSensorPin = 3;

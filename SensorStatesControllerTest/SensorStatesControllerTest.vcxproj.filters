@@ -42,6 +42,9 @@
     <ClCompile Include="..\SumoRobot\TwoStateSensor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\SumoRobot\DigitalInputSensor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SumoRobot\SensorStatesController.h">
@@ -69,6 +72,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\SumoRobot\TwoStateSensor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SumoRobot\DigitalInputSensor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
