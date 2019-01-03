@@ -3,16 +3,20 @@
 // 
 
 #include "SensorTCRT5000.h"
+//---------------------------------------------------------------------------
 
 SensorTCRT5000::SensorTCRT5000(uint8_t sensorPin, int lowLimit)
 {
 	_sensorPin = sensorPin;
 	_lowLimit = lowLimit;
 }
+//---------------------------------------------------------------------------
 
 void SensorTCRT5000::OnTick()
 {
+	Measure();
 }
+//---------------------------------------------------------------------------
 
 int SensorTCRT5000::Measure()
 {
@@ -31,17 +35,17 @@ int SensorTCRT5000::Measure()
 
 	return currentValue;
 }
+//---------------------------------------------------------------------------
 
 uint8_t SensorTCRT5000::IsSignaled()
 {
 	return _occasionsCount >= MIN_OCCASION_COUNT && _isReset == 0;
 }
+//---------------------------------------------------------------------------
 
 void SensorTCRT5000::Reset()
 {
 	_isReset = 1;
 }
-
-
-//SensorTCRT5000Class SensorTCRT5000;
+//---------------------------------------------------------------------------
 

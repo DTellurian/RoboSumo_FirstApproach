@@ -36,6 +36,12 @@
     <ClCompile Include="..\SumoRobot\OnboardHardware.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\SumoRobot\DebugHelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SumoRobot\TwoStateSensor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SumoRobot\SensorStatesController.h">
@@ -57,6 +63,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="__vm\.SensorStatesControllerTest.vsarduino.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SumoRobot\DebugHelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SumoRobot\TwoStateSensor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -4,14 +4,8 @@
  Author:	Dmytro.Mykhalchuk
 */
 
-#include "OnboardHardware.h"
+#include "DebugHelper.h"
 #include "SensorStatesController.h"
-#include "TwoStateSensor.h"
-#include "TwoStateSensor.h"
-#include "SensorTCRT5000.h"
-#include "EngineDriver.h"
-#include "MovementManager.h"
-
 #include "OnboardHardware.h"
 
 uint8_t leftSensorPin = 3;
@@ -58,22 +52,11 @@ void setup()
 	delay(2000);*/
 }
 
-void DelayForSeconds(uint8_t secondsCount)
-{
-	while (secondsCount-- > 0)
-	{
-		Serial.print(secondsCount + 1);
-		Serial.println(" left");
-
-		delay(1000);
-	}
-}
-
 // the loop function runs over and over again until power down or reset
 void loop()
 {
 	delay(700);
-	DelayForSeconds(3);
+	DebugHelper::DelayForSeconds(3);
 
 	Serial.println("Launch SumoRobot");
 
@@ -139,7 +122,7 @@ void loop()
 			OnboardHardware::movementManager.ClearQueue();
 
 			Serial.println("Sensors!");
-			DelayForSeconds(5);
+			DebugHelper::DelayForSeconds(5);
 
 		/*	leftEngine.SetMode(DIRECTION_BACK, VELOCITY_CRUISER_SPEED);
 			rightEngine.SetMode(DIRECTION_BACK, VELOCITY_CRUISER_SPEED);

@@ -77,10 +77,10 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\SumoRobot;$(ProjectDir)..\..\..\Install\arduino-1.8.8\libraries;$(ProjectDir)..\..\..\Install\arduino-1.8.8\hardware\arduino\avr\libraries;C:\Users\Dmytro.Mykhalchuk\Documents\Arduino\libraries;$(ProjectDir)..\..\..\Install\arduino-1.8.8\hardware\arduino\avr\cores\arduino;$(ProjectDir)..\..\..\Install\arduino-1.8.8\hardware\arduino\avr\variants\eightanaloginputs;$(ProjectDir)..\..\..\Install\arduino-1.8.8\hardware\tools\avr\avr\include;$(ProjectDir)..\..\..\Install\arduino-1.8.8\hardware\tools\avr\avr\include\avr;$(ProjectDir)..\..\..\Install\arduino-1.8.8\hardware\tools\avr\lib\gcc\avr\4.8.1\include;$(ProjectDir)..\..\..\Install\arduino-1.8.8\hardware\tools\avr\lib\gcc\avr\4.9.2\include;$(ProjectDir)..\..\..\Install\arduino-1.8.8\hardware\tools\avr\lib\gcc\avr\4.9.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\SumoRobot;C:\Program Files (x86)\Arduino\libraries;C:\Users\Dmytro.Mykhalchuk\Documents\Arduino\libraries;C:\Program Files (x86)\Arduino\hardware\arduino\avr\libraries;C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino;C:\Program Files (x86)\Arduino\hardware\arduino\avr\variants\eightanaloginputs;C:\Program Files (x86)\Arduino\hardware\tools\avr\avr\include;C:\Program Files (x86)\Arduino\hardware\tools\avr\avr\include\avr;C:\Program Files (x86)\Arduino\hardware\tools\avr\lib\gcc\avr\4.8.1\include;C:\Program Files (x86)\Arduino\hardware\tools\avr\lib\gcc\avr\4.9.2\include;C:\Program Files (x86)\Arduino\hardware\tools\avr\lib\gcc\avr\4.9.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ProjectDir)__vm\.SumoRobot.vsarduino.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <IgnoreStandardIncludePath>false</IgnoreStandardIncludePath>
-      <PreprocessorDefinitions>__AVR_ATmega328p__;__AVR_ATmega328P__;_VMDEBUG=1;F_CPU=16000000L;ARDUINO=10808;ARDUINO_AVR_NANO;ARDUINO_ARCH_AVR;__cplusplus=201103L;_VMICRO_INTELLISENSE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>__AVR_ATmega328p__;__AVR_ATmega328P__;_VMDEBUG=1;F_CPU=16000000L;ARDUINO=10806;ARDUINO_AVR_NANO;ARDUINO_ARCH_AVR;__cplusplus=201103L;_VMICRO_INTELLISENSE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -113,6 +113,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AtomicMotion.h" />
+    <ClInclude Include="DebugHelper.h" />
     <ClInclude Include="EngineDriver.h" />
     <ClInclude Include="MovementManager.h" />
     <ClInclude Include="OnboardHardware.h" />
@@ -123,6 +124,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AtomicMotion.cpp" />
+    <ClCompile Include="DebugHelper.cpp" />
     <ClCompile Include="EngineDriver.cpp" />
     <ClCompile Include="MovementManager.cpp" />
     <ClCompile Include="OnboardHardware.cpp" />
