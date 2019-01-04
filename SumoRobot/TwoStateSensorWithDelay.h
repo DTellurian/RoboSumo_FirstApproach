@@ -1,7 +1,7 @@
-// TwoStateSensor.h
+// TwoStateSensorWithDelay.h
 
-#ifndef _TWOSTATESENSOR_h
-#define _TWOSTATESENSOR_h
+#ifndef _TWOSTATESENSORWITHDELAY_h
+#define _TWOSTATESENSORWITHDELAY_h
 
 #if defined(ARDUINO) && ARDUINO >= 100
 #include "arduino.h"
@@ -10,21 +10,21 @@
 #endif
 //---------------------------------------------------------------------------
 
-class TwoStateSensor
+#include "TwoStateSensor.h"
+
+class TwoStateSensorWithDelay : public TwoStateSensor
 {
 protected:
-	TwoStateSensor();
+	TwoStateSensorWithDelay();
 	virtual void TrySetIsSignaled(uint8_t newValue);
 
-
 public:
-	virtual void OnTick() {};
-	uint8_t IsSignaled();
-
+	void DisableForPeriod(uint32_t delayMs);
 
 private:
-	TwoStateSensor(TwoStateSensor&);
-	uint8_t _isSignaled = 0;
+	TwoStateSensorWithDelay(TwoStateSensorWithDelay&);
+
+	uint32_t _delayEndTimeMs = 0;	
 };
 //---------------------------------------------------------------------------
 #endif

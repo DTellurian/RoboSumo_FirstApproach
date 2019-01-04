@@ -48,6 +48,9 @@
     <ClInclude Include="DigitalInputSensor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TwoStateSensorWithDelay.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EngineDriver.cpp">
@@ -75,6 +78,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DigitalInputSensor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TwoStateSensorWithDelay.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

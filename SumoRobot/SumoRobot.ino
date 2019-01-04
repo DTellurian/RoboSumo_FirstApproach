@@ -5,6 +5,7 @@
 */
 
 
+#include "TwoStateSensorWithDelay.h"
 #include "DebugHelper.h"
 #include "OnboardHardware.h"
 
@@ -109,10 +110,6 @@ void loop()
 
 		if (OnboardHardware::leftSensorTCRT5000.IsSignaled() || OnboardHardware::rightSensorTCRT5000.IsSignaled())
 		{
-
-			OnboardHardware::leftSensorTCRT5000.Reset();
-			OnboardHardware::rightSensorTCRT5000.Reset();
-
 			Serial.print("L:");
 			Serial.println(leftSensorValue);
 

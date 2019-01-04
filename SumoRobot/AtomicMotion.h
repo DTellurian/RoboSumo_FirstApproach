@@ -1,5 +1,6 @@
 // AtomicMotion.h
 
+
 #ifndef _ATOMICMOTION_h
 #define _ATOMICMOTION_h
 
@@ -8,6 +9,7 @@
 #else
 	#include "WProgram.h"
 #endif
+//---------------------------------------------------------------------------
 
 class AtomicMotion
 {
@@ -23,8 +25,8 @@ class AtomicMotion
 	 uint8_t directionRightEngine = 0;
 	 uint8_t velocityRightEngine = 0;
 
-	 uint32_t duration = 0;
+	 uint32_t _durationMs = 0;
 };
-
+//---------------------------------------------------------------------------
 #endif
 

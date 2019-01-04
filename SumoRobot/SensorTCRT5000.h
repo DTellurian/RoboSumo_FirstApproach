@@ -11,27 +11,29 @@
 
 #define MIN_OCCASION_COUNT 1
 
-#include "TwoStateSensor.h"
+#include "TwoStateSensorWithDelay.h"
 
-class SensorTCRT5000 : public TwoStateSensor
+class SensorTCRT5000 : public TwoStateSensorWithDelay
 {
 private:
 	SensorTCRT5000();
-
-	uint8_t _isReset = 0;
+	
 	uint8_t _sensorPin = 0;
-	uint8_t _occasionsCount = 0;
+
+	uint8_t _lowOccasionsCount = 0;
+	uint8_t _hightOccasionsCount = 0;
+
 	int _lowLimit = 0;
+	int _hightLimit = 0;
+
 protected:
 
 
 public:
-	SensorTCRT5000(uint8_t sensorPin, int lowLimit);
+	SensorTCRT5000(uint8_t sensorPin, int lowLimit, int hightLimit);
 
 	virtual void OnTick();
-	int Measure();
-	virtual uint8_t IsSignaled();
-	void Reset();
+	int Measure();	
 };
 
 //extern SensorTCRT5000Class SensorTCRT5000;

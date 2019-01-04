@@ -31,7 +31,7 @@ void MovementManager::SetNextAction(uint8_t directionLeftEngine, uint8_t velocit
 	targetMotion->velocityLeftEngine = velocityLeftEngine;
 	targetMotion->velocityRightEngine = velocityRightEngine;
 
-	targetMotion->duration = duration;
+	targetMotion->_durationMs = duration;
 
 	if (lastMotionToExecuteIndex == 0)
 		OnTick();
@@ -57,7 +57,7 @@ void MovementManager::OnTick()
 				_leftEngineDriverPtr->SetMode(currentMotion->directionLeftEngine, currentMotion->velocityLeftEngine);
 				_rightEngineDriverPtr->SetMode(currentMotion->directionRightEngine, currentMotion->velocityRightEngine);
 
-				nextItemStartTimeMS = currentTimeMS + currentMotion->duration;							
+				nextItemStartTimeMS = currentTimeMS + currentMotion->_durationMs;							
 			}
 		}
 	}
@@ -79,3 +79,4 @@ uint8_t MovementManager::AnyMovementExecuted()
 {
 	return lastMotionToExecuteIndex != -1;
 }
+//---------------------------------------------------------------------------
