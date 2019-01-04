@@ -16,12 +16,14 @@ void TwoStateSensorWithDelay::TrySetIsSignaled(uint8_t newValue)
 {
 	if (_delayEndTimeMs != 0)
 	{
-		if (_delayEndTimeMs > millis())
+		if (millis() > _delayEndTimeMs)
 		{
 			_delayEndTimeMs = 0;
 			TwoStateSensor::TrySetIsSignaled(newValue);
 		}
 	}
+	else
+		TwoStateSensor::TrySetIsSignaled(newValue);
 }
 //---------------------------------------------------------------------------
 

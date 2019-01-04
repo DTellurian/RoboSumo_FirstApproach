@@ -15,78 +15,78 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="SumoRobot.ino" />
+    <None Include="ModeSearchForTargetTest.ino" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="__vm\.SumoRobot.vsarduino.h">
+    <ClInclude Include="__vm\.ModeSearchForTargetTest.vsarduino.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="EngineDriver.h">
+    <ClInclude Include="..\SumoRobot\AtomicMotion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SensorTCRT5000.h">
+    <ClInclude Include="..\SumoRobot\DebugHelper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MovementManager.h">
+    <ClInclude Include="..\SumoRobot\DigitalInputSensor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="AtomicMotion.h">
+    <ClInclude Include="..\SumoRobot\EngineDriver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TwoStateSensor.h">
+    <ClInclude Include="..\SumoRobot\MovementManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SensorStatesController.h">
+    <ClInclude Include="..\SumoRobot\OnboardHardware.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="OnboardHardware.h">
+    <ClInclude Include="..\SumoRobot\SensorStatesController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DebugHelper.h">
+    <ClInclude Include="..\SumoRobot\SensorTCRT5000.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DigitalInputSensor.h">
+    <ClInclude Include="..\SumoRobot\TwoStateSensor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TwoStateSensorWithDelay.h">
+    <ClInclude Include="..\SumoRobot\TwoStateSensorWithDelay.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ModeSearchForTarget.h">
+    <ClInclude Include="..\SumoRobot\ModeSearchForTarget.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="EngineDriver.cpp">
+    <ClCompile Include="..\SumoRobot\AtomicMotion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SensorTCRT5000.cpp">
+    <ClCompile Include="..\SumoRobot\DebugHelper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MovementManager.cpp">
+    <ClCompile Include="..\SumoRobot\DigitalInputSensor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AtomicMotion.cpp">
+    <ClCompile Include="..\SumoRobot\EngineDriver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TwoStateSensor.cpp">
+    <ClCompile Include="..\SumoRobot\MovementManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SensorStatesController.cpp">
+    <ClCompile Include="..\SumoRobot\OnboardHardware.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="OnboardHardware.cpp">
+    <ClCompile Include="..\SumoRobot\SensorStatesController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DebugHelper.cpp">
+    <ClCompile Include="..\SumoRobot\SensorTCRT5000.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DigitalInputSensor.cpp">
+    <ClCompile Include="..\SumoRobot\TwoStateSensor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TwoStateSensorWithDelay.cpp">
+    <ClCompile Include="..\SumoRobot\TwoStateSensorWithDelay.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ModeSearchForTarget.cpp">
+    <ClCompile Include="..\SumoRobot\ModeSearchForTarget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

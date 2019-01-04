@@ -3,22 +3,20 @@
  Created:	03-Jan-19 18:05:28
  Author:	Dmytro.Mykhalchuk
 */
+//---------------------------------------------------------------------------
 
 #include "OnboardHardware.h"
 #include "DebugHelper.h"
-
-uint8_t leftSensorPin = 3;
-uint8_t rightSensorPin = 4;
+//---------------------------------------------------------------------------
 
 // the setup function runs once when you press reset or power the board
 void setup()
 {
 	pinMode(LED_BUILTIN, OUTPUT);
-	pinMode(leftSensorPin, INPUT);
-	pinMode(rightSensorPin, INPUT);
 
 	Serial.begin(9600);
 }
+//---------------------------------------------------------------------------
 
 // the loop function runs over and over again until power down or reset
 void loop()
@@ -26,10 +24,11 @@ void loop()
 	Serial.println("SensorStatesControllerTest Launched!");
 	Serial.println();
 
-	DebugHelper::DelayForSeconds(5);
+	DebugHelper::DelayForSeconds(2);
 
 	while (true)
 	{
+		//delay(1000);
 		//int leftSensorValue = OnboardHardware::leftSensorTCRT5000.Measure();
 		//int rifghtSensorValue = OnboardHardware::rightSensorTCRT5000.Measure();
 
@@ -44,6 +43,8 @@ void loop()
 				Serial.print(millis());
 				Serial.print("Left sensor change state. New state");
 				Serial.println(newSensorState);
+
+				//boardHardware::leftSensorTCRT5000.DisableForPeriod(3000);
 			}
 
 			if (OnboardHardware::sensorStatesController.IsChanged(&OnboardHardware::rightSensorTCRT5000, newSensorState) == 1)
@@ -51,6 +52,8 @@ void loop()
 				Serial.print(millis());
 				Serial.print("Right sensor change state. New state");
 				Serial.println(newSensorState);
+
+				OnboardHardware::rightSensorTCRT5000.DisableForPeriod(3000);
 			}
 
 			if (OnboardHardware::sensorStatesController.IsChanged(&OnboardHardware::leftIRForwardSensor, newSensorState) == 1)
@@ -77,3 +80,4 @@ void loop()
 		//DebugHelper::DelayForSeconds(5);
 	}
 }
+//---------------------------------------------------------------------------

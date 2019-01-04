@@ -5,6 +5,7 @@
 */
 
 
+#include "ModeSearchForTarget.h"
 #include "TwoStateSensorWithDelay.h"
 #include "DebugHelper.h"
 #include "OnboardHardware.h"
