@@ -6,6 +6,18 @@ When you're done, you can delete the content in this README and update the file 
 
 ---
 
+##Try to use HC-12 UART wireless to upload
+
+Open boards.txt file
+
+Find
+> Arduino Nano w/ ATmega328P (old bootloader)
+section
+
+and change 'nano.menu.cpu.atmega328old.upload.speed=57600' to default 9600
+
+---
+
 ## Edit a file
 
 You’ll start by editing this README file to learn how to edit a file in Bitbucket.
