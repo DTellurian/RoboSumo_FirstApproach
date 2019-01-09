@@ -32,6 +32,11 @@ public:
 
 	static MovementManager movementManager;
 	static SensorStatesController sensorStatesController;
+
+	static SensorTCRT5000 rightWheelSensorTCRT5000;
+	static SensorStatesController wheelsSensorsStatesController;
+
+	static void Initialize();
 private:
 	OnboardHardware(void);
 	OnboardHardware(OnboardHardware&);

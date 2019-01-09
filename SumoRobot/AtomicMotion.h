@@ -26,6 +26,9 @@ class AtomicMotion
 	 uint8_t velocityRightEngine = 0;
 
 	 uint32_t _durationMs = 0;
+
+	 uint32_t leftWheelTicks = 0;
+	 uint32_t rightWheelTicks = 0;
 };
 //---------------------------------------------------------------------------
 #endif

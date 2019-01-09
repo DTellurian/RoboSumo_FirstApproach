@@ -26,6 +26,7 @@ void loop()
 	Serial.println();
 
 	DebugHelper::DelayForSeconds(2);
+	OnboardHardware::Initialize();
 	ModeSearchForTarget modeSearchForTarget;
 
 	OnboardHardware::movementManager.SetNextAction(

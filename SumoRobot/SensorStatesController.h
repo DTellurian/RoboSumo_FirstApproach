@@ -10,7 +10,7 @@
 #endif
 //---------------------------------------------------------------------------
 
-#define SENSORS_COUNT 4
+//#define SENSORS_COUNT 4
 //---------------------------------------------------------------------------
 
 #include "TwoStateSensor.h"
@@ -19,12 +19,17 @@
 class SensorStatesController
 {
 protected:
-	TwoStateSensor* sensorsPtrArray[SENSORS_COUNT] = {};
-	uint8_t handeledSensorsStates[SENSORS_COUNT] = {};	
+	//TwoStateSensor* sensorsPtrArray[SENSORS_COUNT] = {};
+	//uint8_t handeledSensorsStates[SENSORS_COUNT] = {};	
+	
+	uint8_t* handeledSensorsStates;
+
 	uint8_t hasChangedSensorValues = 0;	
 	
 public:
-	SensorStatesController();
+	SensorStatesController(uint8_t sensorsCount);
+
+	TwoStateSensor** sensorsPtrArray;
 
 	void OnTick();
 	uint8_t IsChanged(TwoStateSensor* sensotToCheckPtr, uint8_t& newValue);
@@ -33,6 +38,7 @@ public:
 
 private:
 	SensorStatesController(SensorStatesController&);
+	uint8_t _sensorsCount;
 };
 //---------------------------------------------------------------------------
 //extern SensorStatesController sensorStatesController;
