@@ -34,6 +34,8 @@ public:
 	static SensorStatesController sensorStatesController;
 
 	static SensorTCRT5000 rightWheelSensorTCRT5000;
+	static SensorTCRT5000 leftWheelSensorTCRT5000;
+
 	static SensorStatesController wheelsSensorsStatesController;
 
 	static void Initialize();
