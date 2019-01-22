@@ -58,7 +58,11 @@ void MovementManager::OnTick()
 				_rightWheelTicksCount++;
 			}
 
-			//TODO: count left wheel!
+			uint8_t leftWheelSensorTCRT5000NewValue = 0;
+			if (_wheelsSensorsStatesControllerPtr->IsChanged(_rightWheelSensorPtr, leftWheelSensorTCRT5000NewValue) == 1)
+			{
+				_leftWheelTicksCount++;
+			}		
 
 			_wheelsSensorsStatesControllerPtr->HandleAllSensors();
 		}
@@ -67,10 +71,15 @@ void MovementManager::OnTick()
 
 		if (_nextItemStartRightWheelTicksCount > 0 && _rightWheelTicksCount >= _nextItemStartRightWheelTicksCount)
 		{
-			_rightEngineDriverPtr->Stop();
 			needToStartNextAction = 1;
 			//TODO: In current realization after first wheel reaching goal next action will be started!
 		}
+
+		if (_nextItemStartLeftWheelTicksCount > 0 && _leftWheelTicksCount >= _nextItemStartLeftWheelTicksCount)
+		{
+			needToStartNextAction = 1;
+			//TODO: In current realization after first wheel reaching goal next action will be started!
+		}		
 
 		if (currentTimeMS > _nextItemStartTimeMS)
 		{
@@ -92,7 +101,9 @@ void MovementManager::OnTick()
 
 				_nextItemStartTimeMS = currentTimeMS + currentMotion->_durationMs;							
 				_nextItemStartRightWheelTicksCount = currentMotion->rightWheelTicks;
+				_nextItemStartLeftWheelTicksCount = currentMotion->rightWheelTicks;
 				_rightWheelTicksCount = 0;
+				_leftWheelTicksCount = 0;
 			}
 		}
 	}

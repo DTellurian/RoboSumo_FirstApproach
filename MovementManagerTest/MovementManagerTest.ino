@@ -49,20 +49,13 @@ void loop()
 
 	while (true)
 	{
-		Serial.println(analogRead(18));
-		Serial.println(analogRead(19));
-		Serial.println();
-
-		delay(500);
-		continue;
-
 		OnboardHardware::sensorStatesController.OnTick();
 		OnboardHardware::wheelsSensorsStatesController.OnTick();
-		//OnboardHardware::movementManager.OnTick();
+		OnboardHardware::movementManager.OnTick();
 
 		if (OnboardHardware::wheelsSensorsStatesController.HasChangedSensorValues())
 		{
-		/*	uint8_t rightWheelSensorTCRT5000NewValue = 0;
+			uint8_t rightWheelSensorTCRT5000NewValue = 0;
 			uint8_t rightWheelSensorTCRT5000IsChanged = 0;
 
 			rightWheelSensorTCRT5000IsChanged = OnboardHardware::wheelsSensorsStatesController.IsChanged(&OnboardHardware::rightWheelSensorTCRT5000, rightWheelSensorTCRT5000NewValue) == 1;
@@ -72,7 +65,7 @@ void loop()
 				Serial.print(millis());
 				Serial.print("Right wheel sensor change state. New state");
 				Serial.println(rightWheelSensorTCRT5000NewValue);
-			}*/
+			}
 
 			uint8_t leftWheelSensorTCRT5000NewValue = 0;
 			uint8_t leftWheelSensorTCRT5000IsChanged = 0;
@@ -89,8 +82,6 @@ void loop()
 
 			OnboardHardware::wheelsSensorsStatesController.HandleAllSensors();
 		}
-
-		continue;
 
 		//modeSearchForTarget.OnTick();
 		if (OnboardHardware::sensorStatesController.HasChangedSensorValues())
@@ -136,10 +127,12 @@ void loop()
 			{
 				if (leftIRSensorNewValue == 1)
 				{
+
+					//90 degrees rotation
 					OnboardHardware::movementManager.ClearQueue();
 					OnboardHardware::movementManager.SetNextAction(
-						DIRECTION_BACK, 0,
-						DIRECTION_BACK, VELOCITY_MAX_SPEED,
+						DIRECTION_FORWARD, VELOCITY_LOW_SPEED,
+						DIRECTION_BACK, VELOCITY_LOW_SPEED,
 						10000, 6, 6);
 
 					//OnboardHardware::leftIRForwardSensor.
@@ -158,8 +151,8 @@ void loop()
 				{
 					OnboardHardware::movementManager.ClearQueue();
 					OnboardHardware::movementManager.SetNextAction(
-						DIRECTION_FORWARD, 0,
-						DIRECTION_FORWARD, VELOCITY_MAX_SPEED,
+						DIRECTION_BACK, VELOCITY_LOW_SPEED,
+						DIRECTION_FORWARD, VELOCITY_LOW_SPEED,
 						10000, 6, 6);
 				}
 

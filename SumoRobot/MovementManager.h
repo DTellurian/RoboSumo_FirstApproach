@@ -37,6 +37,7 @@ private:
 	uint32_t _nextItemStartTimeMS = 0;
 
 	uint32_t _nextItemStartRightWheelTicksCount = 0;
+	uint32_t _nextItemStartLeftWheelTicksCount = 0;
 
 	uint32_t _rightWheelTicksCount = 0;
 	uint32_t _leftWheelTicksCount = 0;
