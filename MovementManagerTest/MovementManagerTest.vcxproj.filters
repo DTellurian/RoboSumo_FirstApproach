@@ -54,6 +54,9 @@
     <ClInclude Include="..\SumoRobot\TwoStateSensorWithDelay.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\SumoRobot\MovementHelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\SumoRobot\AtomicMotion.cpp">
@@ -87,6 +90,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\SumoRobot\TwoStateSensorWithDelay.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SumoRobot\MovementHelper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

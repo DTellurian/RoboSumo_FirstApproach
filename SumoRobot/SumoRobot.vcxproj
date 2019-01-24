@@ -117,6 +117,7 @@
     <ClInclude Include="DigitalInputSensor.h" />
     <ClInclude Include="EngineDriver.h" />
     <ClInclude Include="ModeSearchForTarget.h" />
+    <ClInclude Include="MovementHelper.h" />
     <ClInclude Include="MovementManager.h" />
     <ClInclude Include="OnboardHardware.h" />
     <ClInclude Include="SensorStatesController.h" />
@@ -131,6 +132,7 @@
     <ClCompile Include="DigitalInputSensor.cpp" />
     <ClCompile Include="EngineDriver.cpp" />
     <ClCompile Include="ModeSearchForTarget.cpp" />
+    <ClCompile Include="MovementHelper.cpp" />
     <ClCompile Include="MovementManager.cpp" />
     <ClCompile Include="OnboardHardware.cpp" />
     <ClCompile Include="SensorStatesController.cpp" />

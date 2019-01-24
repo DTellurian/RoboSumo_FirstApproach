@@ -117,6 +117,7 @@
     <ClInclude Include="..\SumoRobot\DigitalInputSensor.h" />
     <ClInclude Include="..\SumoRobot\EngineDriver.h" />
     <ClInclude Include="..\SumoRobot\ModeSearchForTarget.h" />
+    <ClInclude Include="..\SumoRobot\MovementHelper.h" />
     <ClInclude Include="..\SumoRobot\MovementManager.h" />
     <ClInclude Include="..\SumoRobot\OnboardHardware.h" />
     <ClInclude Include="..\SumoRobot\SensorStatesController.h" />
@@ -131,6 +132,7 @@
     <ClCompile Include="..\SumoRobot\DigitalInputSensor.cpp" />
     <ClCompile Include="..\SumoRobot\EngineDriver.cpp" />
     <ClCompile Include="..\SumoRobot\ModeSearchForTarget.cpp" />
+    <ClCompile Include="..\SumoRobot\MovementHelper.cpp" />
     <ClCompile Include="..\SumoRobot\MovementManager.cpp" />
     <ClCompile Include="..\SumoRobot\OnboardHardware.cpp" />
     <ClCompile Include="..\SumoRobot\SensorStatesController.cpp" />

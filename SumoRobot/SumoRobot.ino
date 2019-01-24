@@ -5,6 +5,7 @@
 */
 
 
+#include "MovementHelper.h"
 #include "ModeSearchForTarget.h"
 #include "TwoStateSensorWithDelay.h"
 #include "DebugHelper.h"

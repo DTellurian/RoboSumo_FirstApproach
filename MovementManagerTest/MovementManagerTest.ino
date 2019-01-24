@@ -4,6 +4,7 @@
  Author:	Dmytro.Mykhalchuk
 */
 
+#include "MovementHelper.h"
 #include "ModeSearchForTarget.h"
 #include "OnboardHardware.h"
 #include "DebugHelper.h"
@@ -130,10 +131,12 @@ void loop()
 
 					//90 degrees rotation
 					OnboardHardware::movementManager.ClearQueue();
-					OnboardHardware::movementManager.SetNextAction(
+					MovementHelperClass::AddCenterAxisRotation(ROTATION_DIRECTION_LEFT, ROTATION_DEGREES_90, VELOCITY_LOW_SPEED, 10000);
+					
+					/*OnboardHardware::movementManager.SetNextAction(
 						DIRECTION_FORWARD, VELOCITY_LOW_SPEED,
 						DIRECTION_BACK, VELOCITY_LOW_SPEED,
-						10000, 6, 6);
+						10000, 6, 6);*/
 
 					//OnboardHardware::leftIRForwardSensor.
 				}
@@ -150,10 +153,11 @@ void loop()
 				if (rightIRSensorNewValue == 1)
 				{
 					OnboardHardware::movementManager.ClearQueue();
-					OnboardHardware::movementManager.SetNextAction(
+					MovementHelperClass::AddCenterAxisRotation(ROTATION_DIRECTION_RIGHT, ROTATION_DEGREES_90, VELOCITY_LOW_SPEED, 10000);
+					/*OnboardHardware::movementManager.SetNextAction(
 						DIRECTION_BACK, VELOCITY_LOW_SPEED,
 						DIRECTION_FORWARD, VELOCITY_LOW_SPEED,
-						10000, 6, 6);
+						10000, 6, 6);*/
 				}
 
 				Serial.print(millis());
