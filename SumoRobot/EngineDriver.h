@@ -14,8 +14,15 @@
 #define DIRECTION_FORWARD 0x1
 #define DIRECTION_BACK  0x0
 
+//140
+#define VELOCITY_VERY_LOW_SPEED  0x8C
+
+//220
 #define VELOCITY_LOW_SPEED  0xDC
+
 #define VELOCITY_MAX_SPEED  0xFF
+
+//220
 #define VELOCITY_CRUISER_SPEED  0xDC
 //#define VELOCITY_CRUISER_SPEED  140
 //---------------------------------------------------------------------------

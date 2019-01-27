@@ -57,6 +57,15 @@
     <ClInclude Include="MovementHelper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ModesController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IMode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModeBorderRotation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EngineDriver.cpp">
@@ -93,6 +102,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MovementHelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ModesController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ModeBorderRotation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

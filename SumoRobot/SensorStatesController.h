@@ -33,6 +33,7 @@ public:
 
 	void OnTick();
 	uint8_t IsChanged(TwoStateSensor* sensotToCheckPtr, uint8_t& newValue);
+	uint8_t IsChangedAndHasSpecificValue(TwoStateSensor* sensotToCheckPtr, uint8_t valueToCheck);
 	uint8_t HasChangedSensorValues();
 	void HandleAllSensors();
 

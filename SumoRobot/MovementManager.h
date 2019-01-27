@@ -23,6 +23,7 @@ private:
 	EngineDriver* _rightEngineDriverPtr;
 
 	SensorTCRT5000* _rightWheelSensorPtr;
+	SensorTCRT5000* _leftWheelSensorPtr;
 	SensorStatesController* _wheelsSensorsStatesControllerPtr;
 
 	AtomicMotion firstMotion;
@@ -45,7 +46,7 @@ protected:
 
 
 public:
-	MovementManager(EngineDriver* leftEngineDriverPtr, EngineDriver* rightEngineDriverPtr, SensorTCRT5000* rightWheelSensorPtr, SensorStatesController* wheelsSensorsStatesControllerPtr);
+	MovementManager(EngineDriver* leftEngineDriverPtr, EngineDriver* rightEngineDriverPtr, SensorTCRT5000* leftWheelSensorPtr, SensorTCRT5000* rightWheelSensorPtr, SensorStatesController* wheelsSensorsStatesControllerPtr);
 
 	void OnTick();
 	void SetNextAction(uint8_t directionLeftEngine, uint8_t velocityLeftEngine, uint8_t directionRightEngine, uint8_t velocityRightEngine, uint32_t duration, uint32_t leftWheelTicks = 0, uint32_t rightWheelTicks = 0);

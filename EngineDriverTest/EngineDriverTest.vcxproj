@@ -11,9 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{54D7443C-92BF-4FF4-8914-8F4D41C3C100}</ProjectGuid>
-    <RootNamespace>SumoRobot</RootNamespace>
-    <ProjectName>SumoRobot</ProjectName>
+    <ProjectGuid>{952DE23A-0467-435C-B343-983D42F2026D}</ProjectGuid>
+    <RootNamespace>EngineDriverTest</RootNamespace>
+    <ProjectName>EngineDriverTest</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -77,8 +77,8 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\SumoRobot;C:\Program Files (x86)\Arduino\libraries;C:\Users\Dmytro.Mykhalchuk\Documents\Arduino\libraries;C:\Program Files (x86)\Arduino\hardware\arduino\avr\libraries;C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino;C:\Program Files (x86)\Arduino\hardware\arduino\avr\variants\eightanaloginputs;C:\Program Files (x86)\Arduino\hardware\tools\avr\avr\include;C:\Program Files (x86)\Arduino\hardware\tools\avr\avr\include\avr;C:\Program Files (x86)\Arduino\hardware\tools\avr\lib\gcc\avr\4.8.1\include;C:\Program Files (x86)\Arduino\hardware\tools\avr\lib\gcc\avr\4.9.2\include;C:\Program Files (x86)\Arduino\hardware\tools\avr\lib\gcc\avr\4.9.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <ForcedIncludeFiles>$(ProjectDir)__vm\.SumoRobot.vsarduino.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\EngineDriverTest;C:\Program Files (x86)\Arduino\libraries;C:\Users\Dmytro.Mykhalchuk\Documents\Arduino\libraries;C:\Program Files (x86)\Arduino\hardware\arduino\avr\libraries;C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino;C:\Program Files (x86)\Arduino\hardware\arduino\avr\variants\eightanaloginputs;$(ProjectDir)..\SumoRobot;C:\Program Files (x86)\Arduino\hardware\tools\avr\avr\include;C:\Program Files (x86)\Arduino\hardware\tools\avr\avr\include\avr;C:\Program Files (x86)\Arduino\hardware\tools\avr\lib\gcc\avr\4.8.1\include;C:\Program Files (x86)\Arduino\hardware\tools\avr\lib\gcc\avr\4.9.2\include;C:\Program Files (x86)\Arduino\hardware\tools\avr\lib\gcc\avr\4.9.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ProjectDir)__vm\.EngineDriverTest.vsarduino.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <IgnoreStandardIncludePath>false</IgnoreStandardIncludePath>
       <PreprocessorDefinitions>__AVR_ATmega328p__;__AVR_ATmega328P__;_VMDEBUG=1;F_CPU=16000000L;ARDUINO=10806;ARDUINO_AVR_NANO;ARDUINO_ARCH_AVR;__cplusplus=201103L;_VMICRO_INTELLISENSE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
@@ -107,50 +107,20 @@
     <DebuggerFlavor>VisualMicroDebugger</DebuggerFlavor>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="SumoRobot.ino">
+    <None Include="EngineDriverTest.ino">
       <FileType>CppCode</FileType>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AtomicMotion.h" />
-    <ClInclude Include="DebugHelper.h" />
-    <ClInclude Include="DigitalInputSensor.h" />
-    <ClInclude Include="EngineDriver.h" />
-    <ClInclude Include="IMode.h" />
-    <ClInclude Include="ModeBorderRotation.h" />
-    <ClInclude Include="ModesController.h" />
-    <ClInclude Include="ModeSearchForTarget.h" />
-    <ClInclude Include="MovementHelper.h" />
-    <ClInclude Include="MovementManager.h" />
-    <ClInclude Include="OnboardHardware.h" />
-    <ClInclude Include="SensorStatesController.h" />
-    <ClInclude Include="SensorTCRT5000.h" />
-    <ClInclude Include="TwoStateSensor.h" />
-    <ClInclude Include="TwoStateSensorWithDelay.h" />
-    <ClInclude Include="__vm\.SumoRobot.vsarduino.h" />
+    <ClCompile Include="..\SumoRobot\DebugHelper.cpp" />
+    <ClCompile Include="..\SumoRobot\EngineDriver.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AtomicMotion.cpp" />
-    <ClCompile Include="DebugHelper.cpp" />
-    <ClCompile Include="DigitalInputSensor.cpp" />
-    <ClCompile Include="EngineDriver.cpp" />
-    <ClCompile Include="ModeBorderRotation.cpp" />
-    <ClCompile Include="ModesController.cpp" />
-    <ClCompile Include="ModeSearchForTarget.cpp" />
-    <ClCompile Include="MovementHelper.cpp" />
-    <ClCompile Include="MovementManager.cpp" />
-    <ClCompile Include="OnboardHardware.cpp" />
-    <ClCompile Include="SensorStatesController.cpp" />
-    <ClCompile Include="SensorTCRT5000.cpp" />
-    <ClCompile Include="TwoStateSensor.cpp" />
-    <ClCompile Include="TwoStateSensorWithDelay.cpp" />
+    <ClInclude Include="..\SumoRobot\DebugHelper.h" />
+    <ClInclude Include="..\SumoRobot\EngineDriver.h" />
+    <ClInclude Include="__vm\.EngineDriverTest.vsarduino.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
-  <ProjectExtensions>
-    <VisualStudio>
-      <UserProperties arduino.upload.port="COM6" />
-    </VisualStudio>
-  </ProjectExtensions>
 </Project>

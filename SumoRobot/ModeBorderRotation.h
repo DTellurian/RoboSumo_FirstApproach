@@ -1,7 +1,8 @@
-// ModeSearchForTarget.h
+// ModeBorderRotation.h
 
-#ifndef _MODESEARCHFORTARGET_h
-#define _MODESEARCHFORTARGET_h
+#ifndef _MODEBORDERROTATION_h
+#define _MODEBORDERROTATION_h
+//---------------------------------------------------------------------------
 
 #if defined(ARDUINO) && ARDUINO >= 100
 #include "arduino.h"
@@ -13,19 +14,18 @@
 #include "IMode.h"
 //---------------------------------------------------------------------------
 
-class ModeSearchForTarget : public IMode
+class ModeBorderRotation : public IMode
 {
 protected:
 
 
 public:
-	ModeSearchForTarget();
+	ModeBorderRotation();
 
 	virtual void OnTick();//From IMode
 	virtual void OnEnterMode();//From IMode
-
 private:
-	ModeSearchForTarget(ModeSearchForTarget&);
+	ModeBorderRotation(ModeBorderRotation&);
 };
 //---------------------------------------------------------------------------
 #endif

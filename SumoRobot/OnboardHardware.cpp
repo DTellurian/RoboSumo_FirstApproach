@@ -4,9 +4,8 @@
 
 #include "OnboardHardware.h"
 //---------------------------------------------------------------------------
-
-EngineDriver OnboardHardware::rightEngine(12, 11, 10);
-EngineDriver OnboardHardware::leftEngine(7, 8, 9);
+EngineDriver OnboardHardware::leftEngine(12, 11, 9);
+EngineDriver OnboardHardware::rightEngine(7, 8, 10);
 
 SensorTCRT5000 OnboardHardware::leftSensorTCRT5000(15, 400, 400);//615 on white, 70 on dark
 SensorTCRT5000 OnboardHardware::rightSensorTCRT5000(14, 400, 400);
@@ -20,7 +19,7 @@ DigitalInputSensor OnboardHardware::rightIRForwardSensor(4, 0);
 SensorStatesController OnboardHardware::sensorStatesController(4);
 SensorStatesController OnboardHardware::wheelsSensorsStatesController(2);
 
-MovementManager OnboardHardware::movementManager(&OnboardHardware::leftEngine, &OnboardHardware::rightEngine, &OnboardHardware::rightWheelSensorTCRT5000, &OnboardHardware::wheelsSensorsStatesController);
+MovementManager OnboardHardware::movementManager(&OnboardHardware::leftEngine, &OnboardHardware::rightEngine, &OnboardHardware::leftWheelSensorTCRT5000, &OnboardHardware::rightWheelSensorTCRT5000, &OnboardHardware::wheelsSensorsStatesController);
 
 //---------------------------------------------------------------------------
 

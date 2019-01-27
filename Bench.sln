@@ -17,6 +17,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ModeSearchForTargetTest", "
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MovementManagerTest", "MovementManagerTest\MovementManagerTest.vcxproj", "{1F6E258D-3CCD-4202-84D8-32637ACC3C63}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EngineDriverTest", "EngineDriverTest\EngineDriverTest.vcxproj", "{952DE23A-0467-435C-B343-983D42F2026D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -46,6 +48,10 @@ Global
 		{1F6E258D-3CCD-4202-84D8-32637ACC3C63}.Debug|x86.Build.0 = Debug|Win32
 		{1F6E258D-3CCD-4202-84D8-32637ACC3C63}.Release|x86.ActiveCfg = Release|Win32
 		{1F6E258D-3CCD-4202-84D8-32637ACC3C63}.Release|x86.Build.0 = Release|Win32
+		{952DE23A-0467-435C-B343-983D42F2026D}.Debug|x86.ActiveCfg = Debug|Win32
+		{952DE23A-0467-435C-B343-983D42F2026D}.Debug|x86.Build.0 = Debug|Win32
+		{952DE23A-0467-435C-B343-983D42F2026D}.Release|x86.ActiveCfg = Release|Win32
+		{952DE23A-0467-435C-B343-983D42F2026D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,6 +62,7 @@ Global
 		{A3A6BE05-2DB3-4EF5-97EE-53D0C022F07B} = {7059C1C7-D1F9-41E3-94E3-C86CA8063177}
 		{FE9E0406-7693-4AF4-8598-388A6DA65CC4} = {7059C1C7-D1F9-41E3-94E3-C86CA8063177}
 		{1F6E258D-3CCD-4202-84D8-32637ACC3C63} = {7059C1C7-D1F9-41E3-94E3-C86CA8063177}
+		{952DE23A-0467-435C-B343-983D42F2026D} = {7059C1C7-D1F9-41E3-94E3-C86CA8063177}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C4BD9C83-C31E-4D45-93B7-8E7D8BD5ACDF}

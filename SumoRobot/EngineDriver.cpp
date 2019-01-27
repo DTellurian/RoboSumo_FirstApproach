@@ -18,9 +18,18 @@ EngineDriver::EngineDriver(uint8_t enanble1Pin, uint8_t enanble2Pin, uint8_t pwm
 
 void EngineDriver::SetMode(uint8_t direction, uint8_t velocity)
 {
-	digitalWrite(_enanble1Pin, direction);
-	digitalWrite(_enanble2Pin, direction ^ 0x1);
 	analogWrite(_pwmPin, velocity);
+
+	if (direction == DIRECTION_FORWARD)
+	{
+		digitalWrite(_enanble1Pin, HIGH);
+		digitalWrite(_enanble2Pin, LOW);
+	}
+	else
+	{
+		digitalWrite(_enanble1Pin, LOW);
+		digitalWrite(_enanble2Pin, HIGH);
+	}	
 }
 //---------------------------------------------------------------------------
 

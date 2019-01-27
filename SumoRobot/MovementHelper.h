@@ -33,6 +33,7 @@ protected:
 
 public:
 	static void AddCenterAxisRotation(RotationDirection rotationDirection, RotationDegrees rotationDegrees, uint8_t velocity, uint16_t timeout);
+	static void AddAroundWheelRotation(RotationDirection rotationDirection, RotationDegrees rotationDegrees, uint8_t velocity, uint16_t timeout);
 
 private:
 	MovementHelperClass();

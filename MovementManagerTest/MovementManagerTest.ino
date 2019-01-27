@@ -3,10 +3,11 @@
  Created:	09-Jan-19 22:40:06
  Author:	Dmytro.Mykhalchuk
 */
-
+//
 #include "MovementHelper.h"
 #include "ModeSearchForTarget.h"
 #include "OnboardHardware.h"
+#include "EngineDriver.h"
 #include "DebugHelper.h"
 //---------------------------------------------------------------------------
 
@@ -39,17 +40,34 @@ void loop()
 	Serial.println("MovementManagerTest Launched!");
 	Serial.println();
 
+	//EngineDriver leftEngine(12, 11, 10);
+	//EngineDriver rightEngine(7, 8, 9);
+
 	DebugHelper::DelayForSeconds(2);
 	OnboardHardware::Initialize();
 	//ModeSearchForTarget modeSearchForTarget;
+
+	//leftEngine.SetMode(DIRECTION_FORWARD, VELOCITY_CRUISER_SPEED);
+	//rightEngine.SetMode(DIRECTION_FORWARD, VELOCITY_CRUISER_SPEED);
+	//delay(5000);
+
+	//leftEngine.SetMode(DIRECTION_BACK, VELOCITY_CRUISER_SPEED);
+	//rightEngine.SetMode(DIRECTION_BACK, VELOCITY_CRUISER_SPEED);
+	//delay(5000);
+
 
 	//OnboardHardware::movementManager.SetNextAction(
 	//	DIRECTION_FORWARD, VELOCITY_CRUISER_SPEED,
 	//	DIRECTION_FORWARD, VELOCITY_CRUISER_SPEED,
 	//	100000);
 
+	//OnboardHardware::movementManager.SetNextAction(
+	//	DIRECTION_FORWARD, VELOCITY_LOW_SPEED,
+	//	DIRECTION_BACK, VELOCITY_LOW_SPEED,
+	//	10000, 60, 60);
+
 	while (true)
-	{
+	{		
 		OnboardHardware::sensorStatesController.OnTick();
 		OnboardHardware::wheelsSensorsStatesController.OnTick();
 		OnboardHardware::movementManager.OnTick();
@@ -77,11 +95,8 @@ void loop()
 			{
 				Serial.print(millis());
 				Serial.print("Left wheel sensor change state. New state");
-				Serial.print(analogRead(19));
 				Serial.println(leftWheelSensorTCRT5000NewValue);
 			}
-
-			OnboardHardware::wheelsSensorsStatesController.HandleAllSensors();
 		}
 
 		//modeSearchForTarget.OnTick();
@@ -131,14 +146,20 @@ void loop()
 
 					//90 degrees rotation
 					OnboardHardware::movementManager.ClearQueue();
-					MovementHelperClass::AddCenterAxisRotation(ROTATION_DIRECTION_LEFT, ROTATION_DEGREES_90, VELOCITY_LOW_SPEED, 10000);
-					
-					/*OnboardHardware::movementManager.SetNextAction(
-						DIRECTION_FORWARD, VELOCITY_LOW_SPEED,
-						DIRECTION_BACK, VELOCITY_LOW_SPEED,
-						10000, 6, 6);*/
+					//MovementHelperClass::AddCenterAxisRotation(ROTATION_DIRECTION_LEFT, ROTATION_DEGREES_90, VELOCITY_CRUISER_SPEED, 10000);
+					MovementHelperClass::AddAroundWheelRotation(ROTATION_DIRECTION_LEFT, ROTATION_DEGREES_90, VELOCITY_CRUISER_SPEED, 10000);
 
-					//OnboardHardware::leftIRForwardSensor.
+					//OnboardHardware::movementManager.SetNextAction(
+					//	DIRECTION_FORWARD, VELOCITY_LOW_SPEED,
+					//	DIRECTION_BACK, 0,
+					//	10000, 6, 6);
+
+					//OnboardHardware::movementManager.SetNextAction(
+					//	DIRECTION_BACK, VELOCITY_LOW_SPEED,
+					//	DIRECTION_BACK, 0,
+					//	100, 1, 1);
+
+						//OnboardHardware::leftIRForwardSensor.
 				}
 
 				Serial.print(millis());
@@ -153,11 +174,18 @@ void loop()
 				if (rightIRSensorNewValue == 1)
 				{
 					OnboardHardware::movementManager.ClearQueue();
-					MovementHelperClass::AddCenterAxisRotation(ROTATION_DIRECTION_RIGHT, ROTATION_DEGREES_90, VELOCITY_LOW_SPEED, 10000);
-					/*OnboardHardware::movementManager.SetNextAction(
-						DIRECTION_BACK, VELOCITY_LOW_SPEED,
-						DIRECTION_FORWARD, VELOCITY_LOW_SPEED,
-						10000, 6, 6);*/
+					//MovementHelperClass::AddCenterAxisRotation(ROTATION_DIRECTION_RIGHT, ROTATION_DEGREES_90, VELOCITY_CRUISER_SPEED, 10000);
+					MovementHelperClass::AddAroundWheelRotation(ROTATION_DIRECTION_RIGHT, ROTATION_DEGREES_90, VELOCITY_CRUISER_SPEED, 10000);
+
+					//OnboardHardware::movementManager.SetNextAction(
+					//	DIRECTION_BACK, 0,
+					//	DIRECTION_FORWARD, VELOCITY_LOW_SPEED,
+					//	10000, 6, 6);
+
+					//OnboardHardware::movementManager.SetNextAction(
+					//	DIRECTION_BACK, 0,
+					//	DIRECTION_BACK, VELOCITY_LOW_SPEED,
+					//	100, 1, 1);
 				}
 
 				Serial.print(millis());
@@ -166,6 +194,7 @@ void loop()
 			}
 		}
 
+		OnboardHardware::wheelsSensorsStatesController.HandleAllSensors();
 		OnboardHardware::sensorStatesController.HandleAllSensors();
 	}
 }

@@ -57,6 +57,9 @@
     <ClInclude Include="..\SumoRobot\MovementHelper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\SumoRobot\IMode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\SumoRobot\AtomicMotion.cpp">

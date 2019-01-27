@@ -5,7 +5,7 @@
 #include "MovementManager.h"
 //---------------------------------------------------------------------------
 
-MovementManager::MovementManager(EngineDriver* leftEngineDriverPtr, EngineDriver* rightEngineDriverPtr, SensorTCRT5000* rightWheelSensorPtr, SensorStatesController* wheelsSensorsStatesControllerPtr)
+MovementManager::MovementManager(EngineDriver* leftEngineDriverPtr, EngineDriver* rightEngineDriverPtr, SensorTCRT5000* leftWheelSensorPtr, SensorTCRT5000* rightWheelSensorPtr, SensorStatesController* wheelsSensorsStatesControllerPtr)
 {
 	_lastMotionToExecuteIndex = -1;
 	_nextMotionIndex = 0;
@@ -15,6 +15,7 @@ MovementManager::MovementManager(EngineDriver* leftEngineDriverPtr, EngineDriver
 	_leftEngineDriverPtr = leftEngineDriverPtr;
 	_rightEngineDriverPtr = rightEngineDriverPtr;
 
+	_leftWheelSensorPtr = leftWheelSensorPtr;
 	_rightWheelSensorPtr = rightWheelSensorPtr;
 	_wheelsSensorsStatesControllerPtr = wheelsSensorsStatesControllerPtr;
 
@@ -59,12 +60,10 @@ void MovementManager::OnTick()
 			}
 
 			uint8_t leftWheelSensorTCRT5000NewValue = 0;
-			if (_wheelsSensorsStatesControllerPtr->IsChanged(_rightWheelSensorPtr, leftWheelSensorTCRT5000NewValue) == 1)
+			if (_wheelsSensorsStatesControllerPtr->IsChanged(_leftWheelSensorPtr, leftWheelSensorTCRT5000NewValue) == 1)
 			{
 				_leftWheelTicksCount++;
-			}		
-
-			_wheelsSensorsStatesControllerPtr->HandleAllSensors();
+			}
 		}
 
 		uint8_t needToStartNextAction = 0;
@@ -79,29 +78,37 @@ void MovementManager::OnTick()
 		{
 			needToStartNextAction = 1;
 			//TODO: In current realization after first wheel reaching goal next action will be started!
-		}		
+		}
 
 		if (currentTimeMS > _nextItemStartTimeMS)
 		{
 			needToStartNextAction = 1;
 		}
 
-		if(needToStartNextAction == 1)
+		if (needToStartNextAction == 1)
 		{
 			if (_nextMotionIndex > _lastMotionToExecuteIndex)
 			{
 				ClearQueue();
+				Serial.println("Queue ended");
 			}
 			else
 			{
 				AtomicMotion* currentMotion = _motionsPtrArray[_nextMotionIndex++];
 
+				Serial.println("NewAction");
+				Serial.print("Left engine:");
+				Serial.println(currentMotion->directionLeftEngine);
+				Serial.print("Right engine:");
+				Serial.println(currentMotion->directionRightEngine);
+				Serial.println();
+
 				_leftEngineDriverPtr->SetMode(currentMotion->directionLeftEngine, currentMotion->velocityLeftEngine);
 				_rightEngineDriverPtr->SetMode(currentMotion->directionRightEngine, currentMotion->velocityRightEngine);
 
-				_nextItemStartTimeMS = currentTimeMS + currentMotion->_durationMs;							
+				_nextItemStartTimeMS = currentTimeMS + currentMotion->_durationMs;
 				_nextItemStartRightWheelTicksCount = currentMotion->rightWheelTicks;
-				_nextItemStartLeftWheelTicksCount = currentMotion->rightWheelTicks;
+				_nextItemStartLeftWheelTicksCount = currentMotion->leftWheelTicks;
 				_rightWheelTicksCount = 0;
 				_leftWheelTicksCount = 0;
 			}

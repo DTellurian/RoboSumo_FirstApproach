@@ -52,6 +52,19 @@ uint8_t SensorStatesController::IsChanged(TwoStateSensor* sensotToCheckPtr, uint
 }
 //---------------------------------------------------------------------------
 
+uint8_t SensorStatesController::IsChangedAndHasSpecificValue(TwoStateSensor * sensotToCheckPtr, uint8_t valueToCheck)
+{
+	uint8_t newValue;
+	
+	if (IsChanged(sensotToCheckPtr, newValue) == 1)
+	{
+		return newValue == valueToCheck;
+	}
+	else
+		return 0;
+}
+//---------------------------------------------------------------------------
+
 uint8_t SensorStatesController::HasChangedSensorValues()
 {
 	return hasChangedSensorValues;
