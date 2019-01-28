@@ -26,6 +26,7 @@ public:
 	virtual void OnEnterMode();//From IMode
 private:
 	ModeBorderRotation(ModeBorderRotation&);
+	void SetActions();	
 };
 //---------------------------------------------------------------------------
 #endif

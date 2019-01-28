@@ -90,18 +90,18 @@ void MovementManager::OnTick()
 			if (_nextMotionIndex > _lastMotionToExecuteIndex)
 			{
 				ClearQueue();
-				Serial.println("Queue ended");
+				//Serial.println("Queue ended");
 			}
 			else
 			{
 				AtomicMotion* currentMotion = _motionsPtrArray[_nextMotionIndex++];
 
-				Serial.println("NewAction");
-				Serial.print("Left engine:");
-				Serial.println(currentMotion->directionLeftEngine);
-				Serial.print("Right engine:");
-				Serial.println(currentMotion->directionRightEngine);
-				Serial.println();
+				//Serial.println("NewAction");
+				//Serial.print("Left engine:");
+				//Serial.println(currentMotion->directionLeftEngine);
+				//Serial.print("Right engine:");
+				//Serial.println(currentMotion->directionRightEngine);
+				//Serial.println();
 
 				_leftEngineDriverPtr->SetMode(currentMotion->directionLeftEngine, currentMotion->velocityLeftEngine);
 				_rightEngineDriverPtr->SetMode(currentMotion->directionRightEngine, currentMotion->velocityRightEngine);

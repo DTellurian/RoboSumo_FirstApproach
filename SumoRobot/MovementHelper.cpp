@@ -6,7 +6,7 @@
 #include "OnboardHardware.h"
 //---------------------------------------------------------------------------
 
-void MovementHelperClass::AddCenterAxisRotation(RotationDirection rotationDirection, RotationDegrees rotationDegrees, uint8_t velocity, uint16_t timeout)
+void MovementHelper::AddCenterAxisRotation(RotationDirection rotationDirection, RotationDegrees rotationDegrees, uint8_t velocity, uint32_t timeout)
 {
 	uint8_t wheelTicksCount = 2 * (uint8_t)rotationDegrees;
 
@@ -28,7 +28,7 @@ void MovementHelperClass::AddCenterAxisRotation(RotationDirection rotationDirect
 }
 //---------------------------------------------------------------------------
 
-void MovementHelperClass::AddAroundWheelRotation(RotationDirection rotationDirection, RotationDegrees rotationDegrees, uint8_t velocity, uint16_t timeout)
+void MovementHelper::AddAroundWheelRotation(RotationDirection rotationDirection, RotationDegrees rotationDegrees, uint8_t velocity, uint32_t timeout)
 {
 	uint8_t wheelTicksCount = 3 * (uint8_t)rotationDegrees;
 

@@ -19,25 +19,25 @@ typedef enum
 
 typedef enum
 {
-	ROTATION_DEGREES_45 = 1,
-	ROTATION_DEGREES_90 = 2,
-	ROTATION_DEGREES_135 = 3,
-	ROTATION_DEGREES_180 = 4,
+	ROTATION_DEGREES_45 = 2,
+	ROTATION_DEGREES_90 = 3,
+	ROTATION_DEGREES_135 = 4,
+	ROTATION_DEGREES_180 = 5,
 } RotationDegrees;
 //---------------------------------------------------------------------------
 
-class MovementHelperClass
+class MovementHelper
 {
 protected:
 
 
 public:
-	static void AddCenterAxisRotation(RotationDirection rotationDirection, RotationDegrees rotationDegrees, uint8_t velocity, uint16_t timeout);
-	static void AddAroundWheelRotation(RotationDirection rotationDirection, RotationDegrees rotationDegrees, uint8_t velocity, uint16_t timeout);
+	static void AddCenterAxisRotation(RotationDirection rotationDirection, RotationDegrees rotationDegrees, uint8_t velocity, uint32_t timeout);
+	static void AddAroundWheelRotation(RotationDirection rotationDirection, RotationDegrees rotationDegrees, uint8_t velocity, uint32_t timeout);
 
 private:
-	MovementHelperClass();
-	MovementHelperClass(MovementHelperClass&);
+	MovementHelper();
+	MovementHelper(MovementHelper&);
 };
 
 //---------------------------------------------------------------------------

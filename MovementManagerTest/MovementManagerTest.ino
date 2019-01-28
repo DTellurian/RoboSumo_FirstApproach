@@ -72,7 +72,7 @@ void loop()
 		OnboardHardware::wheelsSensorsStatesController.OnTick();
 		OnboardHardware::movementManager.OnTick();
 
-		if (OnboardHardware::wheelsSensorsStatesController.HasChangedSensorValues())
+		/*if (OnboardHardware::wheelsSensorsStatesController.HasChangedSensorValues())
 		{
 			uint8_t rightWheelSensorTCRT5000NewValue = 0;
 			uint8_t rightWheelSensorTCRT5000IsChanged = 0;
@@ -97,7 +97,7 @@ void loop()
 				Serial.print("Left wheel sensor change state. New state");
 				Serial.println(leftWheelSensorTCRT5000NewValue);
 			}
-		}
+		}*/
 
 		//modeSearchForTarget.OnTick();
 		if (OnboardHardware::sensorStatesController.HasChangedSensorValues())
@@ -146,12 +146,18 @@ void loop()
 
 					//90 degrees rotation
 					OnboardHardware::movementManager.ClearQueue();
-					//MovementHelperClass::AddCenterAxisRotation(ROTATION_DIRECTION_LEFT, ROTATION_DEGREES_90, VELOCITY_CRUISER_SPEED, 10000);
-					MovementHelperClass::AddAroundWheelRotation(ROTATION_DIRECTION_LEFT, ROTATION_DEGREES_90, VELOCITY_CRUISER_SPEED, 10000);
+					//OnboardHardware::movementManager.SetNextAction(
+					//	DIRECTION_BACK, VELOCITY_CRUISER_SPEED,
+					//	DIRECTION_BACK, VELOCITY_CRUISER_SPEED,
+					//	100000, 3, 3);
+					//MovementHelper::AddCenterAxisRotation(ROTATION_DIRECTION_LEFT, ROTATION_DEGREES_135, VELOCITY_CRUISER_SPEED, 10000);
+					//MovementHelper::AddAroundWheelRotation(ROTATION_DIRECTION_LEFT, ROTATION_DEGREES_135, VELOCITY_CRUISER_SPEED, 10000);
+
+					MovementHelper::AddCenterAxisRotation(ROTATION_DIRECTION_LEFT, ROTATION_DEGREES_90, VELOCITY_CRUISER_SPEED, 10000);
 
 					//OnboardHardware::movementManager.SetNextAction(
-					//	DIRECTION_FORWARD, VELOCITY_LOW_SPEED,
-					//	DIRECTION_BACK, 0,
+					//	DIRECTION_FORWARD, VELOCITY_CRUISER_SPEED,
+					//	DIRECTION_FORWARD, VELOCITY_CRUISER_SPEED,
 					//	10000, 6, 6);
 
 					//OnboardHardware::movementManager.SetNextAction(
@@ -174,8 +180,12 @@ void loop()
 				if (rightIRSensorNewValue == 1)
 				{
 					OnboardHardware::movementManager.ClearQueue();
-					//MovementHelperClass::AddCenterAxisRotation(ROTATION_DIRECTION_RIGHT, ROTATION_DEGREES_90, VELOCITY_CRUISER_SPEED, 10000);
-					MovementHelperClass::AddAroundWheelRotation(ROTATION_DIRECTION_RIGHT, ROTATION_DEGREES_90, VELOCITY_CRUISER_SPEED, 10000);
+					OnboardHardware::movementManager.SetNextAction(
+						DIRECTION_BACK, VELOCITY_CRUISER_SPEED,
+						DIRECTION_BACK, VELOCITY_CRUISER_SPEED,
+						100000, 3, 3);
+					MovementHelper::AddCenterAxisRotation(ROTATION_DIRECTION_RIGHT, ROTATION_DEGREES_135, VELOCITY_CRUISER_SPEED, 10000);
+					//MovementHelper::AddAroundWheelRotation(ROTATION_DIRECTION_RIGHT, ROTATION_DEGREES_135, VELOCITY_CRUISER_SPEED, 10000);
 
 					//OnboardHardware::movementManager.SetNextAction(
 					//	DIRECTION_BACK, 0,
