@@ -2,30 +2,30 @@
 // 
 // 
 
-#include "ModeSearchForTarget.h"
+#include "ModePushTarget.h"
 #include "OnboardHardware.h"
 #include "ModesController.h"
 //---------------------------------------------------------------------------
 
-ModeSearchForTarget::ModeSearchForTarget()
+ModePushTarget::ModePushTarget()
 {
-
-
 }
 //---------------------------------------------------------------------------
 
-void ModeSearchForTarget::OnEnterMode()
+void ModePushTarget::OnEnterMode()
 {
-	Serial.println("ModeSearchForTarget::OnEnterMode");
+	Serial.println(" ModePushTarget::OnEnterMode");
+
+	OnboardHardware::movementManager.ClearQueue();
 
 	OnboardHardware::movementManager.SetNextAction(
-		DIRECTION_FORWARD, VELOCITY_CRUISER_SPEED,
-		DIRECTION_FORWARD, VELOCITY_CRUISER_SPEED,
+		DIRECTION_FORWARD, VELOCITY_MAX_SPEED,
+		DIRECTION_FORWARD, VELOCITY_MAX_SPEED,
 		100000);
 }
 //---------------------------------------------------------------------------
 
-void ModeSearchForTarget::OnTick()
+void ModePushTarget::OnTick()
 {
 	if (OnboardHardware::sensorStatesController.HasChangedSensorValues())
 	{
@@ -34,11 +34,10 @@ void ModeSearchForTarget::OnTick()
 		{
 			ModesController::SetCurrentMode(ModesController::borderRotationModePtr);
 		}
-		else if (OnboardHardware::sensorStatesController.IsChangedAndHasSpecificValue(&OnboardHardware::leftIRForwardSensor, 1) == 1 ||
-			OnboardHardware::sensorStatesController.IsChangedAndHasSpecificValue(&OnboardHardware::rightIRForwardSensor, 1) == 1)
-		{
-			ModesController::SetCurrentMode(ModesController::pushTargetPtr);
-		}
+	}
+	else if (OnboardHardware::leftIRForwardSensor.IsSignaled() == 0 && OnboardHardware::rightIRForwardSensor.IsSignaled() == 0)
+	{
+		ModesController::SetCurrentMode(ModesController::searchForTargetModePtr);
 	}
 }
 //---------------------------------------------------------------------------

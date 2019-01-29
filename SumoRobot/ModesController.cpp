@@ -5,6 +5,7 @@
 #include "ModesController.h"
 #include "ModeSearchForTarget.h"
 #include "ModeBorderRotation.h"
+#include "ModePushTarget.h"
 //---------------------------------------------------------------------------
 
 IMode* ModesController::currentModePtr = 0;
@@ -14,6 +15,9 @@ IMode* ModesController::searchForTargetModePtr = &modeSearchForTarget;
 
 ModeBorderRotation modeBorderRotation;
 IMode* ModesController::borderRotationModePtr = &modeBorderRotation;
+
+ModePushTarget modePushTarget;
+IMode *ModesController::pushTargetPtr = &modePushTarget;
 //---------------------------------------------------------------------------
 
 void ModesController::SetCurrentMode(IMode* targetModePtr)

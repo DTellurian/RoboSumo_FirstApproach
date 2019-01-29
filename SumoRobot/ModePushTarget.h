@@ -1,7 +1,7 @@
-// ModesController.h
+// ModePushTarget.h
 
-#ifndef _MODESCONTROLLER_h
-#define _MODESCONTROLLER_h
+#ifndef _MODEPUSHTARGET_h
+#define _MODEPUSHTARGET_h
 //---------------------------------------------------------------------------
 
 #if defined(ARDUINO) && ARDUINO >= 100
@@ -12,23 +12,21 @@
 //---------------------------------------------------------------------------
 
 #include "IMode.h"
+//---------------------------------------------------------------------------
 
-class ModesController
+class ModePushTarget : public IMode
 {
 protected:
-	static IMode *currentModePtr;
+
 
 public:
-	static IMode *searchForTargetModePtr;
-	static IMode *borderRotationModePtr;
-	static IMode *pushTargetPtr;
+	ModePushTarget();
 
-	static void SetCurrentMode(IMode* targetModePtr);
+	virtual void OnTick();//From IMode
+	virtual void OnEnterMode();//From IMode
 
-	static void OnTick();
 private:
-	ModesController();
-	ModesController(ModesController&);
+	ModePushTarget(ModePushTarget&);
 };
 //---------------------------------------------------------------------------
 #endif

@@ -118,6 +118,7 @@
     <ClInclude Include="EngineDriver.h" />
     <ClInclude Include="IMode.h" />
     <ClInclude Include="ModeBorderRotation.h" />
+    <ClInclude Include="ModePushTarget.h" />
     <ClInclude Include="ModesController.h" />
     <ClInclude Include="ModeSearchForTarget.h" />
     <ClInclude Include="MovementHelper.h" />
@@ -135,6 +136,7 @@
     <ClCompile Include="DigitalInputSensor.cpp" />
     <ClCompile Include="EngineDriver.cpp" />
     <ClCompile Include="ModeBorderRotation.cpp" />
+    <ClCompile Include="ModePushTarget.cpp" />
     <ClCompile Include="ModesController.cpp" />
     <ClCompile Include="ModeSearchForTarget.cpp" />
     <ClCompile Include="MovementHelper.cpp" />
