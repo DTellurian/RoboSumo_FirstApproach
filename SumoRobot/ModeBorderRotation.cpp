@@ -33,14 +33,14 @@ void ModeBorderRotation::OnTick()
 
 void ModeBorderRotation::OnEnterMode()
 {
-	Serial.println("ModeBorderRotation::OnEnterMode");
+	//Serial.println("ModeBorderRotation::OnEnterMode");
 	SetActions();
 }
 //---------------------------------------------------------------------------
 
 void ModeBorderRotation::SetActions()
 {
-	Serial.println("SetActions()");
+	//Serial.println("SetActions()");
 	
 
 	uint8_t leftSensorValue = 0;

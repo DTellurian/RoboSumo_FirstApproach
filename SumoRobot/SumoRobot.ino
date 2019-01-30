@@ -29,7 +29,7 @@ void setup()
 // the loop function runs over and over again until power down or reset
 void loop()
 {
-	//delay(700);
+	delay(2700);
 	DebugHelper::DelayForSeconds(3);
 
 	Serial.println("Launch SumoRobot");

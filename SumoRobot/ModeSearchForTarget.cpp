@@ -16,7 +16,7 @@ ModeSearchForTarget::ModeSearchForTarget()
 
 void ModeSearchForTarget::OnEnterMode()
 {
-	Serial.println("ModeSearchForTarget::OnEnterMode");
+	//Serial.println("ModeSearchForTarget::OnEnterMode");
 
 	OnboardHardware::movementManager.SetNextAction(
 		DIRECTION_FORWARD, VELOCITY_CRUISER_SPEED,

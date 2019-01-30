@@ -14,7 +14,7 @@ ModePushTarget::ModePushTarget()
 
 void ModePushTarget::OnEnterMode()
 {
-	Serial.println(" ModePushTarget::OnEnterMode");
+	//Serial.println(" ModePushTarget::OnEnterMode");
 
 	OnboardHardware::movementManager.ClearQueue();
 
